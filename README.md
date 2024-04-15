@@ -1,5 +1,4 @@
 # ft_trancendence
-# ft_Transcendence
 ### Overview:
 Immerse yourself into an engaging online gaming world where users can enjoy thrilling Pong matches with others. The project entails providing a user-friendly interface, integrated chat functionality, and the excitement of real-time multiplayer online games.
 
