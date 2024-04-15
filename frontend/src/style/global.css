@@ -1,0 +1,511 @@
+@import "./fonts.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+	background-color: #162635;
+	position: relative;
+	font-family: "Manrope";
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(255, 63, 167, 0.4) 0%, rgba(56, 42, 57, 0.4) 100%);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.notif::-webkit-scrollbar {
+	width: 7px;
+  }
+  
+  .notif::-webkit-scrollbar-thumb {
+	background-color: #6b7280;
+	border-radius: 4px;
+  }
+  
+  .notif::-webkit-scrollbar-track {
+	background-color: #1f2937;
+	border-radius: 4px;
+  }
+
+.container::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+	background-color: #6b7280;
+	border-radius: 6px;
+  }
+  
+  .container::-webkit-scrollbar-track {
+	background-color: #1f2937;
+	border-radius: 6px;
+  }
+
+.text-container {
+	width: 100%;
+	background-color: rgba(163, 53, 117, 0.5);
+	border-radius: 30px;
+	padding: 20px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	margin-left: 2rem;
+}
+
+.button-animate {
+	transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Online state */
+.online {
+	border-radius: 50%;
+	border: 2px solid #34d399;
+	box-shadow: 0 0 15px rgba(52, 211, 153, 0.6);
+	ring: 8px solid #34d399;
+	ring-opacity: 0.3;
+}
+  
+  /* Away state */
+.away {
+	border-radius: 50%;
+	border: 2px solid #fbbf24;
+	box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+	ring: 8px solid #fbbf24;
+	ring-opacity: 0.3;
+}
+  
+  /* In-game state */
+.in-game {
+	border-radius: 50%;
+	border: 2px solid #6366f1;
+	box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+	ring: 8px solid #6366f1;
+	ring-opacity: 0.3;
+}
+  
+  /* Offline state */
+.offline {
+	border-radius: 50%;
+	border: 2px solid #e5e7eb;
+	box-shadow: 0 0 15px rgba(229, 231, 235, 0.6);
+	ring: 8px solid #e5e7eb;
+	ring-opacity: 0.3;
+ }
+
+/* .header {
+	background: #382A39BF;
+	opacity: 75%;
+	border-radius: 1rem;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: row;
+	margin: 15px;
+	margin-top: 8rem;
+	position: relative; Add this to make position:absolute; relative to the .header
+  } */
+
+.navBar {
+	margin: 20px;
+}
+
+.features-bar {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 249px;
+	height: 83px;
+	border-radius: 0px 0px 20px 20px;
+	background: rgb(199, 57, 136);
+	opacity: 100%;
+	box-shadow: 0px 9px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.features-slides {
+	width: 462px;
+	height: 86px;
+	border-radius: 30px;
+	padding: 1rem;
+	/* Adjusted padding */
+	background: #a43575;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	margin: 1.5rem;
+	/* Adjusted margin */
+}
+
+
+.nav-button {
+	color: #EAEAEA;
+	/* font-family: 'Manrope'; */
+	font-size: 0.9rem;
+	font-style: bold;
+	font-weight: 700;
+	line-height: normal;
+	opacity: 85%;
+	transition: all .3s ease-in;
+}
+
+.nav-button:hover {
+	color: #ffffff;
+	transform: scale(1.1);
+	opacity: 100%;
+}
+
+.pink-button {
+	width: 150px;
+	height: 50px;
+	/* flex-shrink: 0; */
+	border-radius: 50px;
+	background: rgba(245, 63, 161, 0.85);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	color: rgba(255, 255, 255, 1);
+	/* font-family: 'Manrope'; */
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	transition: all .3s ease-in;
+	/* margin-left: 200px; */
+}
+
+.pink-button:hover {
+
+	transform: scale(1.05);
+}
+
+#login-button {
+	background-color: #4caf9e;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+/* Your existing styles... */
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navBar {
+        /* Adjustments for smaller screens */
+        display: flex;
+        flex-direction: column; /* Change the direction to column for stacking items */
+
+        /* Optionally, you can hide the buttons or elements you want in the menu */
+        .nav-button {
+            display: none; /* Hide the buttons in the menu */
+        }
+    }
+
+    /* Show a menu icon */
+    .menu-icon {
+        display: block; /* Display the menu icon */
+        /* Add styles for the menu icon (e.g., a hamburger icon) */
+        /* Example styles: */
+        /* background-image: url('menu-icon.png'); */
+        /* Add other necessary styles for the icon */
+    }
+	.custom-slid-style {
+        width: 90%; /* Adjust the width for smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+        border-radius: 1.25rem; /* Rounded corners for smaller screens */
+    }
+	.custom-chat-style {
+        width: 90%; /* Adjust the width for smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+        border-radius: 1.25rem; /* Rounded corners for smaller screens */
+    }
+}
+
+.custom-sidebar {
+    position: absolute;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    background-color: #0d4d53;
+    transition: right 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.slide-in {
+    right: 0;
+}
+
+.slide-out {
+    right: -300px;
+}
+
+
+.custom-chat-style {
+    height: 60rem; /* 697.5px / 16px = 43.59375rem */
+    flex-shrink: 0;
+	display: flex;
+    border-radius:1rem 1rem; /* Assuming 20px = 1.25rem, 10px = 0.625rem */
+    background: linear-gradient(180deg, rgba(19, 120, 130, 0.44) 0%, #146871 100%);
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25); /* Assuming 4px = 0.25rem */
+	justify-content: end;
+}
+.custom-slid-style {
+    height: 60rem; /* 697.5px / 16px = 43.59375rem */
+    flex-shrink: 0;
+	display: flex;
+    border-radius: 1rem 1rem; /* Assuming 20px = 1.25rem */
+    background: linear-gradient(
+        180deg,
+        rgba(56, 42, 57, 0.55) 0%,
+        rgba(56, 42, 57, 0.55) 0.01%,
+        rgba(56, 42, 57, 0.45) 100%
+    );
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25); /* Assuming 4px = 0.25rem */
+}
+.nav-chat-style {
+    height: 7.5rem; /* 120.125px / 16px = 7.508rem */
+    flex-shrink: 0;
+    border-radius: 1rem 1rem;
+    /* background: #175262f2; */
+	
+	background: linear-gradient(180deg, rgba(19, 120, 130, 0.44) 0%, #146871 100%);
+}
+
+.points{
+	width: 3px;
+	height: 5px;
+	flex-shrink: 0;
+}
+
+@media (min-width: 960px) {
+	.smool\:w-1\/4 {
+	  width: 25%; /* 1/4 */
+	}
+  }
+.challenge-button-style{
+	width: 113.344px;
+	height: 31.969px;
+	flex-shrink: 0;
+	color: #7c2e65;
+	font-family: Manrope;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal; 
+}
+
+.challenge-button{
+	width: 145.313px;
+	height: 42.739px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	background: rgba(177, 33, 110, 0.69);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+}
+
+.usernames{
+	width: 404.938px;
+	height: 47.469px;
+	flex-shrink: 0;
+	color: #FFF;
+	font-family: Manrope;
+	font-size: 2rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.profile-chat-pic{
+	width: 67.813px;
+	height: 67.813px;
+	flex-shrink: 0;
+}
+
+.challenge-button-style{
+	width: 113.344px;
+	height: 31.969px;
+	flex-shrink: 0;
+	color: #7c2e65;
+	font-family: Manrope;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal; 
+}
+
+.challenge-button{
+	width: 145.313px;
+	height: 42.739px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	background: rgba(177, 33, 110, 0.69);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+}
+
+.usernames{
+	width: 404.938px;
+	height: 47.469px;
+	flex-shrink: 0;
+	color: #FFF;
+	font-family: Manrope;
+	font-size: 2rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.profile-chat-pic{
+	width: 67.813px;
+	height: 67.813px;
+	flex-shrink: 0;
+}
+
+/* .channel-icon{
+	width: 48.438px;
+	height: 48.438px;
+	flex-shrink: 0;
+} */
+.channel-vec {
+    display: block;
+    margin: -40px auto 0 8px;
+    padding: auto;
+}
+.user-vec {
+    display: block;
+    margin: -40px auto 0 8px;
+    padding: auto;
+}
+
+
+.card {
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.1s ease;
+	width: 200px;
+  	margin: 0 10px;
+	max-width: 1200px;
+}
+
+.border-1 {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+.team-h{
+	font-family: fantasy;
+}
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(8, 238, 246, 0.464);
+    transform: translateY(-4px);
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.github-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.features-container {
+    background-color: #372938;
+	max-width:  1200px;
+	margin: auto;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    /* margin-top: 8rem; */
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.features-header {
+    background-color: #ae1d6c;
+
+    text-align: center;
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(2, 41, 41, 0.464);
+}
+
+.features-header h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.feature-card {
+	height: 200px;
+	width: 500px;
+    background-color: #371b32;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(57, 8, 53, 0.464);
+}
+
+.feature-text h3, .feature-text p {
+    color: white;
+}
+.feature-card img {
+	margin: 0 auto;
+  }
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.hom-page {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
+@media all and (min-width: 1024px) and (max-width: 1280px)
+{
+	.home-page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
